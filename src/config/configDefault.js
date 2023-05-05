@@ -24,7 +24,7 @@ const defaultConfig = {
   listingMinimumPriceSubUnits: 500,
 
   // Marketplace name is needed for microcopy and in meta tags (bots and social media sharing reads those)
-  marketplaceName: 'Biketribe',
+  marketplaceName: 'Coda',
 
   // Modify Stripe configuration in stripeConfig.js
   // - picks REACT_APP_STRIPE_PUBLISHABLE_KEY from environment variables
@@ -79,11 +79,11 @@ const defaultConfig = {
   // Optional
   // Online presence of the same organization:
   // Facebook page is used in SEO schema (http://schema.org/Organization)
-  siteFacebookPage: null, // e.g. '@sharetribe',
+  siteFacebookPage: 'https://www.facebook.com/thecodagroup', // e.g. '@sharetribe',
   // Instagram page is used in SEO schema (http://schema.org/Organization)
-  siteInstagramPage: null, // e.g. 'https://www.instagram.com/sharetribe/',
+  siteInstagramPage: 'https://www.instagram.com/lovecoda/', // e.g. 'https://www.instagram.com/sharetribe/',
   // Twitter handle is needed in meta tags (twitter:site). Start it with '@' character
-  siteTwitterHandle: null, // e.g. 'https://www.facebook.com/Sharetribe/',
+  siteTwitterHandle: '@_lovecoda', // e.g. 'https://www.facebook.com/Sharetribe/',
 
   // Optional
   // Note that Google Analytics might need advanced opt-out option / cookie consent
@@ -95,9 +95,9 @@ const defaultConfig = {
   // Note: Google doesn't recognize this:
   // https://developers.google.com/search/docs/advanced/structured-data/logo#structured-data-type-definitions
   address: {
-    addressCountry: null, // 'FI',
-    addressRegion: null, // 'Helsinki',
-    postalCode: null, // '00130',
+    addressCountry: 'US', // 'FI',
+    addressRegion: 'Washington', // 'Helsinki',
+    postalCode: '98102', // '00130',
     streetAddress: null, // 'Erottajankatu 19 B',
   },
 };

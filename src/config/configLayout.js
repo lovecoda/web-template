@@ -7,7 +7,7 @@
 // There are 2 SearchPage variants that can be used:
 // 'map' & 'grid'
 export const searchPage = {
-  variantType: 'map',
+  variantType: 'grid',
 };
 
 // ListingPage has 2 layout options: 'coverPhoto' and 'carousel'.
@@ -23,7 +23,7 @@ export const listingImage = {
   // Aspect ratio for listing image variants (width/height)
   // Note: This will be converted to separate aspectWidth and aspectHeight values
   // to make calculations easier.
-  aspectRatio: '4/3',
+  aspectRatio: '4/4',
   // Listings have custom image variants, which are named here.
   variantPrefix: 'listing-card',
 };

@@ -52,10 +52,13 @@ export const listingFields = [
     scope: 'public',
     schemaType: 'enum',
     enumOptions: [
-      { option: 'city-bikes', label: 'City bikes' },
-      { option: 'electric-bikes', label: 'Electric bikes' },
-      { option: 'mountain-bikes', label: 'Mountain bikes' },
-      { option: 'childrens-bikes', label: "Children's bikes" },
+      { option: 'urns', label: 'Urns' },
+      { option: 'jewelry', label: 'Jewelry' },
+      { option: 'art', label: 'Art' },
+      { option: 'services', label: 'Services' },
+      { option: 'memorial-decor', label: 'Memorial Decor' },
+      { option: 'alternatives', label: 'Alternatives' },
+      { option: 'charity', label: 'Charity Donations' },
     ],
     filterConfig: {
       indexForSearch: true,
@@ -74,6 +77,7 @@ export const listingFields = [
       requiredMessage: 'You need to select a category.',
     },
   },
+  /*
   {
     key: 'tire',
     scope: 'public',
@@ -103,6 +107,79 @@ export const listingFields = [
       requiredMessage: 'You need to select a tire size.',
     },
   },
+  */
+  {
+    key: 'material',
+    scope: 'public',
+    schemaType: 'multi-enum',
+    enumOptions: [
+      { option: 'wood', label: 'Wood' },
+      { option: 'metal', label: 'Metal' },
+      { option: 'ceramic', label: 'Ceramic' },
+      { option: 'glass', label: 'Glass' },
+      { option: 'plastic', label: 'Plastic' },
+      { option: 'biodegradable', label: 'Biodegradable' },
+      { option: 'stone', label: 'Stone' },
+      { option: 'gemstone', label: 'Gemstone' },
+      { option: 'other', label: 'Other' },
+      { option: 'none', label: 'None' },
+    ],
+    filterConfig: {
+      indexForSearch: true,
+      label: 'Material',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'Material',
+      isDetail: true,
+    },
+    saveConfig: {
+      label: 'Material',
+      placeholderMessage: 'Select an option…',
+      isRequired: true,
+      requiredMessage: 'You need to select a material.',
+    },
+  },
+  {
+    key: 'color',
+    scope: 'public',
+    schemaType: 'multi-enum',
+    enumOptions: [
+      { option: 'black', label: 'Black ' },
+      { option: 'brown', label: 'Brown' },
+      { option: 'white', label: 'White' },
+      { option: 'grey', label: 'Grey' },
+      { option: 'gold', label: 'Gold' },
+      { option: 'silver', label: 'Silver' },
+      { option: 'bronze', label: 'Bronze' },
+      { option: 'natural', label: 'Natural' },
+      { option: 'red', label: 'Red' },
+      { option: 'orange', label: 'Orange' },
+      { option: 'yellow', label: 'Yellow' },
+      { option: 'green', label: 'Green' },
+      { option: 'blue', label: 'Blue' },
+      { option: 'green', label: 'Green' },
+      { option: 'purple', label: 'Purple' },
+      { option: 'pink', label: 'Pink' },
+      { option: 'none', label: 'None' },
+    ],
+    filterConfig: {
+      indexForSearch: true,
+      label: 'Color',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'Color',
+      isDetail: true,
+    },
+    saveConfig: {
+      label: 'Color',
+      placeholderMessage: 'Select an option…',
+      isRequired: true,
+      requiredMessage: 'You need to select a color.',
+    },
+  },
+  /*
   {
     key: 'brand',
     scope: 'public',
@@ -133,28 +210,44 @@ export const listingFields = [
       requiredMessage: 'You need to select a brand.',
     },
   },
+  */
   {
-    key: 'accessories',
+    key: 'specialty-features',
     scope: 'public',
     schemaType: 'multi-enum',
     enumOptions: [
-      { option: 'bell', label: 'Bell' },
-      { option: 'lights', label: 'Lights' },
-      { option: 'lock', label: 'Lock' },
-      { option: 'mudguard', label: 'Mudguard' },
+      { option: 'solidified-ash', label: 'Solidified cremated remains' },
+      { option: 'engraving', label: 'Can be engraved' },
+      { option: 'image-customization', label: 'Customizable image' },
+      { option: 'hand-made', label: 'Handmade' },
+      { option: 'usa-made', label: 'Made in the US' },
     ],
     filterConfig: {
       indexForSearch: true,
-      label: 'Accessories',
+      label: 'Specialty Features',
       searchMode: 'has_all',
       group: 'secondary',
     },
     showConfig: {
-      label: 'Accessories',
+      label: 'Specialty Features',
     },
     saveConfig: {
-      label: 'Accessories',
+      label: 'Specialty Features',
       placeholderMessage: 'Select an option…',
+      isRequired: false,
+    },
+  },
+
+  {
+    key: 'product-SKU',
+    scope: 'private',
+    schemaType: 'text',
+    showConfig: {
+      label: 'Product SKU',
+    },
+    saveConfig: {
+      label: 'Product SKU',
+      placeholderMessage: 'Add your product SKU for better inventory traceability (not visible to buyers)…',
       isRequired: false,
     },
   },
@@ -223,6 +316,7 @@ export const listingFields = [
  */
 
 export const listingTypes = [
+  /*
   {
     listingType: 'daily-booking',
     label: 'Daily booking',
@@ -232,6 +326,7 @@ export const listingTypes = [
       unitType: 'day',
     },
   },
+  */
   // // Here are some examples for other listingTypes
   // // TODO: SearchPage does not work well if both booking and product selling are used at the same time
   // {
@@ -252,16 +347,16 @@ export const listingTypes = [
   //     unitType: 'hour',
   //   },
   // },
-  // {
-  //   listingType: 'product-selling',
-  //   label: 'Sell bicycles',
-  //   transactionType: {
-  //     process: 'default-purchase',
-  //     alias: 'default-purchase/release-1',
-  //     unitType: 'item',
-  //   },
-  //   stockType: 'multipleItems',
-  // },
+   {
+     listingType: 'product-selling',
+     label: 'Sell memorials and services',
+     transactionType: {
+       process: 'default-purchase',
+       alias: 'default-purchase/release-1',
+       unitType: 'item',
+     },
+     stockType: 'multipleItems',
+   },
 ];
 
 // SearchPage can enforce listing query to only those listings with valid listingType

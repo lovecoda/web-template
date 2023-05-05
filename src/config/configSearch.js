@@ -11,7 +11,7 @@
 // Main search used in Topbar.
 // This can be either 'keywords' or 'location'.
 export const mainSearch = {
-  searchType: 'location',
+  searchType: 'keywords',
 };
 
 /**
@@ -30,6 +30,7 @@ export const dateRangeFilter = {
   // Options: day/night. This affects counting and whether single day picking is possible.
   dateRangeMode: 'day',
 };
+
 
 export const priceFilter = {
   schemaType: 'price',
