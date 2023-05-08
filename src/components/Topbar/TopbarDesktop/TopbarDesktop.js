@@ -7,6 +7,7 @@ import { ACCOUNT_SETTINGS_PAGES } from '../../../routing/routeConfiguration';
 import { propTypes } from '../../../util/types';
 import {
   Avatar,
+  ExternalLink,
   InlineTextButton,
   LinkedLogo,
   Menu,
@@ -145,11 +146,16 @@ const TopbarDesktop = props => {
         alt={intl.formatMessage({ id: 'TopbarDesktop.logo' }, { marketplaceName })}
       />
       {search}
-      <NamedLink className={css.createListingLink} name="NewListingPage">
+      <NamedLink className={css.createListingLink} name="SearchPage">
         <span className={css.createListing}>
-          <FormattedMessage id="TopbarDesktop.createListing" />
+          <FormattedMessage id="TopbarDesktop.browseAll" />
         </span>
       </NamedLink>
+      <ExternalLink className={css.createListingLink} href="https://lovecoda.medium.com/">
+        <span className={css.createListing}>
+          <FormattedMessage id="TopbarDesktop.resourcesLink" />
+        </span>
+     </ExternalLink> 
       {inboxLink}
       {profileMenu}
       {signupLink}
