@@ -959,6 +959,7 @@
   "TopbarMobileMenu.unauthorizedGreeting": "Hello there,{lineBreak}would you like to {signupOrLogin}?",
   "TopbarMobileMenu.yourListingsLink": "Your Listings",
   "TopbarMobileMenu.browseAll":"Browse All Memorials",
+  "TopbarMobileMenu.newListing": "Create New Listing",
   "TopbarMobileMenu.resourcesLink":"Resources",
   "TopbarSearchForm.placeholder": "Search...",
   "TransactionPage.ActivityFeed.default-booking.accepted": "{actor, select, you {You accepted the booking request.} operator {The booking request was accepted.} other {{otherUsersName} accepted the booking request.}}",
