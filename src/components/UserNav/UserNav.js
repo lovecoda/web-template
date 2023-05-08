@@ -35,6 +35,12 @@ const UserNav = props => {
         name: 'ContactDetailsPage',
       },
     },
+    {
+      text: <FormattedMessage id="UserNav.newListing" />,
+      linkProps: {
+        name: 'NewListingPage',
+      },
+    },
   ];
 
   return (
