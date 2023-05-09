@@ -22,7 +22,7 @@ import {
   LISTING_PAGE_PARAM_TYPES,
 } from '../../../util/urlHelpers';
 import { ensureCurrentUser, ensureListing } from '../../../util/data';
-import { BOOKING_PROCESS_NAME, isBookingProcess } from '../../../transactions/transaction';
+import { BOOKING_PROCESS_NAME, PURCHASE_PROCESS_NAME, isBookingProcess } from '../../../transactions/transaction';
 
 // Import shared components
 import {
@@ -376,7 +376,7 @@ class EditListingWizard extends Component {
     const transactionProcessAlias = savedProcessAlias || this.state.transactionProcessAlias;
     const processName = transactionProcessAlias
       ? transactionProcessAlias.split('/')[0]
-      : BOOKING_PROCESS_NAME;
+      : PURCHASE_PROCESS_NAME;
 
     // NOTE: If the listing has invalid configuration in place,
     // the listing is considered deprecated and we don't allow user to modify the listing anymore.
