@@ -685,7 +685,7 @@
   "SearchPage.resetAllFilters": "Reset filters",
   "SearchPage.schemaDescription": "Showing search results",
   "SearchPage.schemaForSearch": "a query",
-  "SearchPage.schemaTitle": "Search results for {searchTitle} | {marketplaceName}",
+  "SearchPage.schemaTitle": "Search results | {marketplaceName}",
   "SearchPage.searchError": "Search failed. Please try again.",
   "SectionFilteredSearches.filteredSearch": "{filter}",
   "SectionFilteredSearches.title": "Discover unique listings",
