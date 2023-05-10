@@ -1,8 +1,8 @@
 import logoImageDesktop from '../assets/coda-logo-desktop.svg';
 import logoImageMobile from '../assets/coda-logo-mobile.svg';
 import brandImage from '../assets/coda-background-1440.jpg';
-import facebookImage from '../assets/biketribe-facebook-sharing-1200x630.jpg';
-import twitterImage from '../assets/biketribe-twitter-sharing-600x314.jpg';
+import facebookImage from '../assets/coda-facebook-sharing-1200x630.jpg';
+import twitterImage from '../assets/coda-twitter-sharing-600x314.jpg';
 
 /////////////////////////////////////////////////////////
 // This file contains configs that affect branding     //
