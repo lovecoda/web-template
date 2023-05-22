@@ -623,6 +623,8 @@
   "ProfileSettingsForm.bioInfo": "{marketplaceName} is built on relationships. Help others on the platform get to know you.",
   "ProfileSettingsForm.bioLabel": "Bio",
   "ProfileSettingsForm.bioPlaceholder": "Tell us a little bit about yourself…",
+  "ProfileSettingsForm.sellerNameLabel": "Seller name",
+  "ProfileSettingsForm.sellerNamePlaceholder": "What's your seller name?",
   "ProfileSettingsForm.changeAvatar": "Change",
   "ProfileSettingsForm.fileInfo": ".JPG, .GIF or .PNG. Max. 20 MB",
   "ProfileSettingsForm.firstNameLabel": "First name",

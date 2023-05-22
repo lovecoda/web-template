@@ -108,6 +108,14 @@ class ProfileSettingsFormComponent extends Component {
             id: 'ProfileSettingsForm.bioPlaceholder',
           });
 
+          // seller name
+          const sellerNameLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.sellerNameLabel',
+          });
+          const sellerNamePlaceholder = intl.formatMessage({
+            id: 'ProfileSettingsForm.sellerNamePlaceholder',
+          });
+
           const uploadingOverlay =
             uploadInProgress || this.state.uploadDelay ? (
               <div className={css.uploadingImageOverlay}>
@@ -288,6 +296,14 @@ class ProfileSettingsFormComponent extends Component {
                     validate={lastNameRequired}
                   />
                 </div>
+                <FieldTextInput
+                  className={css.sellerName}
+                  type="text"
+                  id="sellerName"
+                  name="sellerName"
+                  label={sellerNameLabel}
+                  placeholder={sellerNamePlaceholder}
+                />
               </div>
               <div className={classNames(css.sectionContainer, css.lastSection)}>
                 <H4 as="h2" className={css.sectionTitle}>
