@@ -26,6 +26,7 @@ import SearchIcon from './SearchIcon';
 import TopbarSearchForm from './TopbarSearchForm/TopbarSearchForm';
 import TopbarMobileMenu from './TopbarMobileMenu/TopbarMobileMenu';
 import TopbarDesktop from './TopbarDesktop/TopbarDesktop';
+import TopbarNavigation from './TopbarNavigation/TopbarNavigation';
 
 import css from './Topbar.module.css';
 
@@ -278,6 +279,7 @@ class TopbarComponent extends Component {
             <p className={css.mobileHelp}>
               <FormattedMessage id="Topbar.mobileSearchHelp" />
             </p>
+            <TopbarNavigation className={css.navigation} />
           </div>
         </Modal>
         <ModalMissingInformation

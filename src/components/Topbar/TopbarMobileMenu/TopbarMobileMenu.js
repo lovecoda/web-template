@@ -11,7 +11,13 @@ import { FormattedMessage } from '../../../util/reactIntl';
 import { propTypes } from '../../../util/types';
 import { ensureCurrentUser } from '../../../util/data';
 
-import { AvatarLarge, ExternalLink, InlineTextButton, NamedLink, NotificationBadge } from '../../../components';
+import {
+  AvatarLarge,
+  ExternalLink,
+  InlineTextButton,
+  NamedLink,
+  NotificationBadge,
+} from '../../../components';
 
 import css from './TopbarMobileMenu.module.css';
 
@@ -131,7 +137,6 @@ const TopbarMobileMenu = props => {
           <FormattedMessage id="TopbarMobileMenu.browseAll" />
         </NamedLink>
       </div>
-      
     </div>
   );
 };

@@ -137,11 +137,6 @@
 .mobileHelp {
   color: var(--colorGrey300);
   margin: 0 24px;
-
-  /* Absolute position to avoid affecting the layout of the autocomplete
-   predictions list */
-  position: absolute;
-  top: 73px;
 }
 
 /* ================ Modal ================ */
@@ -246,4 +241,9 @@
   @media (--viewportMedium) {
     margin: 0;
   }
+}
+
+.navigation {
+  margin-top: 24px;
+  padding: 0 24px;
 }
