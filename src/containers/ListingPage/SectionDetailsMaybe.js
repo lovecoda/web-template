@@ -20,7 +20,10 @@ const SectionDetailsMaybe = props => {
     const value = publicDataValue || metadataValue;
 
     if (isDetail && typeof value !== 'undefined') {
-      const findSelectedOption = enumValue => enumOptions?.find(o => enumValue === `${o.option}`);
+      const findSelectedOption = enumValue =>
+        Array.isArray(enumValue)
+          ? enumOptions?.filter(o => enumValue.includes(o.option))
+          : enumOptions?.find(o => enumValue === `${o.option}`);
       const getBooleanMessage = value =>
         value
           ? intl.formatMessage({ id: 'SearchPage.detailYes' })
@@ -29,6 +32,8 @@ const SectionDetailsMaybe = props => {
 
       return schemaType === 'enum'
         ? filteredConfigs.concat({ key, value: optionConfig?.label, label })
+        : schemaType === 'multi-enum'
+        ? filteredConfigs.concat({ key, value: optionConfig.map(o => o.label).join(', '), label })
         : schemaType === 'boolean'
         ? filteredConfigs.concat({ key, value: getBooleanMessage(value), label })
         : schemaType === 'long'

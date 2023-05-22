@@ -167,6 +167,7 @@ export const listingFields = [
     },
     showConfig: {
       label: 'Specialty Features',
+      isDetail: false,
     },
     saveConfig: {
       label: 'Specialty Features',

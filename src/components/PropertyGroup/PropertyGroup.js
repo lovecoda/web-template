@@ -52,7 +52,15 @@ const Item = props => {
 };
 
 const PropertyGroup = props => {
-  const { rootClassName, className, id, options, selectedOptions, twoColumns } = props;
+  const {
+    rootClassName,
+    className,
+    id,
+    options,
+    selectedOptions,
+    twoColumns,
+    onlySelected,
+  } = props;
   const classes = classNames(rootClassName || css.root, className);
   const listClasses = twoColumns ? classNames(classes, css.twoColumns) : classes;
 
@@ -60,9 +68,19 @@ const PropertyGroup = props => {
 
   return (
     <ul className={listClasses}>
-      {checked.map(option => (
-        <Item key={`${id}.${option.key}`} label={option.label} isSelected={option.isSelected} />
-      ))}
+      {onlySelected
+        ? checked.map(option =>
+            option.isSelected ? (
+              <Item
+                key={`${id}.${option.key}`}
+                label={option.label}
+                isSelected={option.isSelected}
+              />
+            ) : null
+          )
+        : checked.map(option => (
+            <Item key={`${id}.${option.key}`} label={option.label} isSelected={option.isSelected} />
+          ))}
     </ul>
   );
 };
@@ -88,6 +106,7 @@ PropertyGroup.propTypes = {
   ),
   selectedOptions: arrayOf(string),
   twoColumns: bool,
+  onlySelected: bool,
 };
 
 export default PropertyGroup;

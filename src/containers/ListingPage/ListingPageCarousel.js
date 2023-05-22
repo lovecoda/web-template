@@ -315,11 +315,12 @@ export const ListingPageComponent = props => {
               intl={intl}
             />
             {listingConfig.listingFields.reduce((pickedElements, config) => {
-              const { key, enumOptions, scope = 'public' } = config;
+              const { key, enumOptions, scope = 'public', showConfig = {} } = config;
+              const { isDetail } = showConfig;
               const value =
                 scope === 'public' ? publicData[key] : scope === 'metadata' ? metadata[key] : null;
               const hasValue = value !== null;
-              return hasValue && config.schemaType === SCHEMA_TYPE_MULTI_ENUM
+              return hasValue && !isDetail && config.schemaType === SCHEMA_TYPE_MULTI_ENUM
                 ? [
                     ...pickedElements,
                     <SectionMultiEnumMaybe
