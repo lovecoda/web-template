@@ -369,6 +369,40 @@ export const userDisplayNameAsString = (user, defaultUserDisplayName) => {
 };
 
 /**
+ * Get the display name of the given seller as string.
+ *
+ * @param {propTypes.user} user
+ *
+ * @return {String} seller that can be rendered in the UI
+ */
+export const sellerDisplayName = user => {
+  const hasAttributes = user && user.attributes;
+  const hasProfile = hasAttributes && user.attributes.profile;
+  const hasPublicData = hasAttributes && hasProfile && user.attributes.profile.publicData;
+  const hasSellerName = hasPublicData && user.attributes.profile.publicData.sellerName;
+
+  if (hasSellerName) {
+    return user.attributes.profile.publicData.sellerName;
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Get either seller or author display name.
+ *
+ * @param {propTypes.user} user
+ *
+ * @return {String} seller that can be rendered in the UI
+ */
+export const sellerOrUserName = user => {
+  const authorName = userDisplayNameAsString(user, '');
+  const sellerName = sellerDisplayName(user);
+
+  return sellerName || authorName;
+};
+
+/**
  * DEPRECATED: Use userDisplayNameAsString function or UserDisplayName component instead
  *
  * @param {propTypes.user} user

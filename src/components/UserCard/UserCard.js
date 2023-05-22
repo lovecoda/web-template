@@ -4,7 +4,7 @@ import truncate from 'lodash/truncate';
 import classNames from 'classnames';
 
 import { FormattedMessage } from '../../util/reactIntl';
-import { ensureUser, ensureCurrentUser } from '../../util/data';
+import { ensureUser, ensureCurrentUser, sellerOrUserName } from '../../util/data';
 import { propTypes } from '../../util/types';
 
 import { AvatarLarge, NamedLink, InlineTextButton } from '../../components';
@@ -67,7 +67,8 @@ const UserCard = props => {
   const ensuredCurrentUser = ensureCurrentUser(currentUser);
   const isCurrentUser =
     ensuredUser.id && ensuredCurrentUser.id && ensuredUser.id.uuid === ensuredCurrentUser.id.uuid;
-  const { displayName, bio } = ensuredUser.attributes.profile;
+  const { bio } = ensuredUser.attributes.profile;
+  const displayName = sellerOrUserName(ensuredUser);
 
   const handleContactUserClick = () => {
     onContactUser(user);

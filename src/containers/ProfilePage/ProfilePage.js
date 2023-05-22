@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { useConfiguration } from '../../context/configurationContext';
 import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { REVIEW_TYPE_OF_PROVIDER, REVIEW_TYPE_OF_CUSTOMER, propTypes } from '../../util/types';
-import { ensureCurrentUser, ensureUser } from '../../util/data';
+import { ensureCurrentUser, ensureUser, sellerOrUserName } from '../../util/data';
 import { withViewport } from '../../util/uiHelpers';
 import { isScrollingDisabled } from '../../ducks/ui.duck';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
@@ -205,7 +205,8 @@ const ProfilePageComponent = props => {
   const profileUser = ensureUser(user);
   const isCurrentUser =
     ensuredCurrentUser.id && profileUser.id && ensuredCurrentUser.id.uuid === profileUser.id.uuid;
-  const { bio, displayName } = profileUser?.attributes?.profile || {};
+  const { bio } = profileUser?.attributes?.profile || {};
+  const displayName = sellerOrUserName(profileUser);
 
   const schemaTitleVars = { name: displayName, marketplaceName: config.marketplaceName };
   const schemaTitle = intl.formatMessage({ id: 'ProfilePage.schemaTitle' }, schemaTitleVars);

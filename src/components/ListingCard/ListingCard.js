@@ -8,7 +8,7 @@ import { FormattedMessage, intlShape, injectIntl } from '../../util/reactIntl';
 import { lazyLoadWithDimensions } from '../../util/uiHelpers';
 import { propTypes } from '../../util/types';
 import { formatMoney } from '../../util/currency';
-import { ensureListing, ensureUser } from '../../util/data';
+import { ensureListing, ensureUser, sellerOrUserName } from '../../util/data';
 import { richText } from '../../util/richText';
 import { createSlug } from '../../util/urlHelpers';
 import { isBookingProcessAlias } from '../../transactions/transaction';
@@ -57,10 +57,9 @@ export const ListingCardComponent = props => {
   const { title = '', price, publicData } = currentListing.attributes;
   const slug = createSlug(title);
   const author = ensureUser(listing.author);
-  const authorName = author.attributes.profile.displayName;
+  const authorName = sellerOrUserName(author);
   const firstImage =
     currentListing.images && currentListing.images.length > 0 ? currentListing.images[0] : null;
-
   const {
     aspectWidth = 1,
     aspectHeight = 1,

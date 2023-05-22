@@ -260,7 +260,11 @@ export const loadData = (params, search, config) => {
         'publicData.pickupEnabled',
         'publicData.shippingEnabled',
       ],
-      'fields.user': ['profile.displayName', 'profile.abbreviatedName'],
+      'fields.user': [
+        'profile.displayName',
+        'profile.abbreviatedName',
+        'profile.publicData.sellerName',
+      ],
       'fields.image': [`variants.${variantPrefix}`, `variants.${variantPrefix}-2x`],
       ...createImageVariantConfig(`${variantPrefix}`, 400, aspectRatio),
       ...createImageVariantConfig(`${variantPrefix}-2x`, 800, aspectRatio),

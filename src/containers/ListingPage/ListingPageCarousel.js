@@ -27,6 +27,7 @@ import {
   ensureListing,
   ensureOwnListing,
   ensureUser,
+  sellerOrUserName,
   userDisplayNameAsString,
 } from '../../util/data';
 import { richText } from '../../util/richText';
@@ -194,7 +195,7 @@ export const ListingPageComponent = props => {
   // When user is banned or deleted the listing is also deleted.
   // Because listing can be never showed with banned or deleted user we don't have to provide
   // banned or deleted display names for the function
-  const authorDisplayName = userDisplayNameAsString(ensuredAuthor, '');
+  const authorDisplayName = sellerOrUserName(ensuredAuthor);
 
   const { formattedPrice } = priceData(price, config.currency, intl);
 

@@ -17,7 +17,7 @@ import {
 } from '../../util/types';
 import { formatMoney } from '../../util/currency';
 import { parse, stringify } from '../../util/urlHelpers';
-import { userDisplayNameAsString } from '../../util/data';
+import { sellerOrUserName } from '../../util/data';
 import {
   getSupportedProcessesInfo,
   isBookingProcess,
@@ -161,7 +161,7 @@ const OrderPanel = props => {
     ? intl.formatMessage({ id: 'OrderPanel.subTitleClosedListing' })
     : null;
 
-  const authorDisplayName = userDisplayNameAsString(author, '');
+  const authorDisplayName = sellerOrUserName(author);
 
   const classes = classNames(rootClassName || css.root, className);
   const titleClasses = classNames(titleClassName || css.orderTitle);
