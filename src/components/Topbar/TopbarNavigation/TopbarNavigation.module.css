@@ -1,0 +1,92 @@
+@import '../../../styles/customMediaQueries.css';
+
+:root {
+  --navigationLinkColor: #343434;
+}
+
+.root {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigationList {
+  /* Layout */
+  display: flex;
+  align-items: center;
+
+  /* Margin & Padding */
+  margin: 0;
+  padding: 0;
+}
+
+.navigationItem {
+  /* Margin & Padding */
+  margin: 0;
+  padding: 0;
+}
+
+.navigationLink {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Font */
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  font-weight: var(--fontWeightMedium);
+  color: var(--navigationLinkColor);
+  white-space: nowrap;
+
+  /* Remove underline */
+  text-decoration: none !important;
+
+  /* Margin & Padding */
+  padding: 18px 12px;
+
+  @media (min-width: 800px) {
+    padding: 18px 24px;
+  }
+
+  @media (--viewportLarge) {
+    padding: 18px 36px;
+  }
+
+  &:hover {
+    color: var(--marketplaceColor);
+  }
+}
+
+.navigationLink {
+  /* Position */
+  position: relative;
+
+  &:after {
+    content: '';
+
+    /* Position */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    /* Size */
+    height: 0px;
+    width: 100%;
+
+    /* Style */
+    background-color: var(--marketplaceColor);
+
+    /* Effect */
+    transition: var(--transitionStyleButton);
+  }
+
+  /* Hover effect */
+  &:hover {
+    &:after {
+      height: 4px;
+    }
+  }
+}

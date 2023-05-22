@@ -22,19 +22,19 @@
    * In the future, we are planning to bring more --marketplace* CSS Properties
    * from hosted assets, which means that they could be managed through Console.
    */
-   --marketplaceColor: #325152; /* hsl(182, 24%, 26%) */
-   --marketplaceColorLight: #467072; /* hsl(260, 63%, 56%), +10L from marketplaceColor */
-   --marketplaceColorDark: #1f3232; /* hsl(260, 63%, 16%), -20L from marketplaceColor */
+  --marketplaceColor: #325152; /* hsl(182, 24%, 26%) */
+  --marketplaceColorLight: #467072; /* hsl(260, 63%, 56%), +10L from marketplaceColor */
+  --marketplaceColorDark: #1f3232; /* hsl(260, 63%, 16%), -20L from marketplaceColor */
 
   /* Colors used for different functions (like error texts) */
 
-  --colorSuccess: #84CDBC;
-  --colorSuccessDark: #45686E;
-  --colorSuccessLight: #84CDBC;
-  --colorFail: #E54C32;
-  --colorFailLight: #F6C6BE;
-  --colorAttention: #ECBC66;
-  --colorAttentionLight: #F4D8A5;
+  --colorSuccess: #84cdbc;
+  --colorSuccessDark: #45686e;
+  --colorSuccessLight: #84cdbc;
+  --colorFail: #e54c32;
+  --colorFailLight: #f6c6be;
+  --colorAttention: #ecbc66;
+  --colorAttentionLight: #f4d8a5;
   --colorBannedLight: var(--marketplaceColorLight);
   --colorBannedDark: var(--marketplaceColor);
 
@@ -119,6 +119,7 @@
 
   --topbarHeight: 60px;
   --topbarHeightDesktop: 72px;
+  --topbarNavigationHeight: 61px;
 
   --TopbarMobileMenu_topMargin: 96px;
 

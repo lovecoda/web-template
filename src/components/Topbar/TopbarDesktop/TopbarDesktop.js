@@ -18,6 +18,7 @@ import {
 } from '../../../components';
 
 import TopbarSearchForm from '../TopbarSearchForm/TopbarSearchForm';
+import TopbarNavigation from '../TopbarNavigation/TopbarNavigation';
 
 import css from './TopbarDesktop.module.css';
 
@@ -149,26 +150,29 @@ const TopbarDesktop = props => {
 
   return (
     <nav className={classes}>
-      <LinkedLogo
-        className={css.logoLink}
-        format="desktop"
-        alt={intl.formatMessage({ id: 'TopbarDesktop.logo' }, { marketplaceName })}
-      />
-      {search}
-      <NamedLink className={css.createListingLink} name="SearchPage">
-        <span className={css.createListing}>
-          <FormattedMessage id="TopbarDesktop.browseAll" />
-        </span>
-      </NamedLink>
-      <ExternalLink className={css.createListingLink} href="https://lovecoda.medium.com/">
-        <span className={css.createListing}>
-          <FormattedMessage id="TopbarDesktop.resourcesLink" />
-        </span>
-     </ExternalLink> 
-      {inboxLink}
-      {profileMenu}
-      {signupLink}
-      {loginLink}
+      <div className={css.content}>
+        <LinkedLogo
+          className={css.logoLink}
+          format="desktop"
+          alt={intl.formatMessage({ id: 'TopbarDesktop.logo' }, { marketplaceName })}
+        />
+        {search}
+        <NamedLink className={css.createListingLink} name="SearchPage">
+          <span className={css.createListing}>
+            <FormattedMessage id="TopbarDesktop.browseAll" />
+          </span>
+        </NamedLink>
+        <ExternalLink className={css.createListingLink} href="https://lovecoda.medium.com/">
+          <span className={css.createListing}>
+            <FormattedMessage id="TopbarDesktop.resourcesLink" />
+          </span>
+        </ExternalLink>
+        {inboxLink}
+        {profileMenu}
+        {signupLink}
+        {loginLink}
+      </div>
+      <TopbarNavigation className={css.navigation} initialValues={initialSearchFormValues} />
     </nav>
   );
 };

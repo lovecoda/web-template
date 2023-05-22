@@ -77,37 +77,6 @@ export const listingFields = [
       requiredMessage: 'You need to select a category.',
     },
   },
-  /*
-  {
-    key: 'tire',
-    scope: 'public',
-    schemaType: 'enum',
-    enumOptions: [
-      { option: '29', label: '29' },
-      { option: '28', label: '28' },
-      { option: '27', label: '27' },
-      { option: '26', label: '26' },
-      { option: '24', label: '24' },
-      { option: '20', label: '20' },
-      { option: '18', label: '18' },
-    ],
-    filterConfig: {
-      indexForSearch: true,
-      label: 'Tire size',
-      group: 'secondary',
-    },
-    showConfig: {
-      label: 'Tire size',
-      isDetail: true,
-    },
-    saveConfig: {
-      label: 'Tire size',
-      placeholderMessage: 'Select an option…',
-      isRequired: true,
-      requiredMessage: 'You need to select a tire size.',
-    },
-  },
-  */
   {
     key: 'material',
     scope: 'public',
@@ -179,38 +148,6 @@ export const listingFields = [
       requiredMessage: 'You need to select a color.',
     },
   },
-  /*
-  {
-    key: 'brand',
-    scope: 'public',
-    schemaType: 'enum',
-    enumOptions: [
-      { option: 'cube', label: 'Cube' },
-      { option: 'diamant', label: 'Diamant' },
-      { option: 'ghost', label: 'GHOST' },
-      { option: 'giant', label: 'Giant' },
-      { option: 'kalkhoff', label: 'Kalkhoff' },
-      { option: 'kona', label: 'Kona' },
-      { option: 'otler', label: 'Otler' },
-      { option: 'vermont', label: 'Vermont' },
-    ],
-    filterConfig: {
-      indexForSearch: true,
-      label: 'Brand',
-      group: 'secondary',
-    },
-    showConfig: {
-      label: 'Brand',
-      isDetail: true,
-    },
-    saveConfig: {
-      label: 'Brand',
-      placeholderMessage: 'Select an option…',
-      isRequired: true,
-      requiredMessage: 'You need to select a brand.',
-    },
-  },
-  */
   {
     key: 'specialty-features',
     scope: 'public',
@@ -247,7 +184,8 @@ export const listingFields = [
     },
     saveConfig: {
       label: 'Product SKU',
-      placeholderMessage: 'Add your product SKU for better inventory traceability (not visible to buyers)…',
+      placeholderMessage:
+        'Add your product SKU for better inventory traceability (not visible to buyers)…',
       isRequired: false,
     },
   },
@@ -347,16 +285,16 @@ export const listingTypes = [
   //     unitType: 'hour',
   //   },
   // },
-   {
-     listingType: 'product-selling',
-     label: 'Sell memorials and services',
-     transactionType: {
-       process: 'default-purchase',
-       alias: 'default-purchase/release-1',
-       unitType: 'item',
-     },
-     stockType: 'multipleItems',
-   },
+  {
+    listingType: 'product-selling',
+    label: 'Sell memorials and services',
+    transactionType: {
+      process: 'default-purchase',
+      alias: 'default-purchase/release-1',
+      unitType: 'item',
+    },
+    stockType: 'multipleItems',
+  },
 ];
 
 // SearchPage can enforce listing query to only those listings with valid listingType

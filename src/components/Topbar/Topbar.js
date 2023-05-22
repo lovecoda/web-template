@@ -19,7 +19,6 @@ import {
   LinkedLogo,
   Modal,
   ModalMissingInformation,
-  NamedLink,
 } from '../../components';
 
 import MenuIcon from './MenuIcon';

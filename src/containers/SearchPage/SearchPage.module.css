@@ -24,8 +24,8 @@
 
   @media (--viewportMedium) {
     position: relative;
-    padding-top: var(--topbarHeightDesktop);
-    min-height: calc(100vh - var(--topbarHeightDesktop));
+    padding-top: calc(var(--topbarHeightDesktop) + var(--topbarNavigationHeight));
+    min-height: calc(100vh - calc(var(--topbarHeightDesktop) + var(--topbarNavigationHeight)));
   }
 }
 
