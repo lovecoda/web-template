@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { FormattedMessage, injectIntl, intlShape } from '../../../util/reactIntl';
 import { propTypes } from '../../../util/types';
-import { userDisplayNameAsString } from '../../../util/data';
+import { sellerOrUserName, userDisplayNameAsString } from '../../../util/data';
 import { isMobileSafari } from '../../../util/userAgent';
 import { createSlug } from '../../../util/urlHelpers';
 
@@ -149,12 +149,14 @@ export class TransactionPanelComponent extends Component {
     const isProviderBanned = !!provider?.attributes?.banned;
     const isProviderDeleted = !!provider?.attributes?.deleted;
 
-    const { authorDisplayName, customerDisplayName, otherUserDisplayNameString } = displayNames(
+    const { customerDisplayName, otherUserDisplayNameString } = displayNames(
       currentUser,
       provider,
       customer,
       intl
     );
+
+    const authorDisplayName = sellerOrUserName(provider);
 
     const deletedListingTitle = intl.formatMessage({
       id: 'TransactionPanel.deletedListingTitle',
