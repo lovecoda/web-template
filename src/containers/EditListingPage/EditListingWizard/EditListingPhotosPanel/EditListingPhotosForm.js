@@ -15,11 +15,13 @@ import { nonEmptyArray, composeValidators } from '../../../../util/validators';
 import { isUploadImageOverLimitError } from '../../../../util/errors';
 
 // Import shared components
-import { Button, Form, AspectRatioWrapper } from '../../../../components';
+import { Button, Form, AspectRatioWrapper, ExternalLink } from '../../../../components';
+import { useRouteConfiguration } from '../../../../context/routeConfigurationContext';
 
 // Import modules from this directory
 import ListingImage from './ListingImage';
 import css from './EditListingPhotosForm.module.css';
+import { pathByRouteName, toPathByRouteName } from '../../../../util/routes';
 
 const ACCEPT_IMAGES = 'image/*';
 
@@ -50,6 +52,23 @@ const ShowListingsError = props => {
   return props.error ? (
     <p className={css.error}>
       <FormattedMessage id="EditListingPhotosForm.showListingFailed" />
+    </p>
+  ) : null;
+};
+
+const SellerNameNotice = props => {
+  const routeConfiguration = useRouteConfiguration();
+  const profileSettingsLink = (
+    <ExternalLink href={pathByRouteName('ProfileSettingsPage', routeConfiguration)}>
+      <FormattedMessage id="EditListingPhotosForm.profileSettingsLink" />
+    </ExternalLink>
+  );
+  return props.showSellerNameNotice ? (
+    <p className={css.sellerNameNotice}>
+      <FormattedMessage
+        id="EditListingPhotosForm.sellerNameNotice"
+        values={{ profileSettingsLink }}
+      />
     </p>
   ) : null;
 };
@@ -152,6 +171,7 @@ export const EditListingPhotosFormComponent = props => {
           errors,
           values,
           listingImageConfig,
+          showSellerNameNotice,
         } = formRenderProps;
 
         const images = values.images;
@@ -256,6 +276,7 @@ export const EditListingPhotosFormComponent = props => {
 
             <PublishListingError error={publishListingError} />
             <ShowListingsError error={showListingsError} />
+            <SellerNameNotice showSellerNameNotice={showSellerNameNotice} />
 
             <Button
               className={css.submitButton}
@@ -273,7 +294,7 @@ export const EditListingPhotosFormComponent = props => {
   );
 };
 
-EditListingPhotosFormComponent.defaultProps = { fetchErrors: null };
+EditListingPhotosFormComponent.defaultProps = { fetchErrors: null, showSellerNameNotice: false };
 
 EditListingPhotosFormComponent.propTypes = {
   fetchErrors: shape({
@@ -292,6 +313,7 @@ EditListingPhotosFormComponent.propTypes = {
   updateInProgress: bool.isRequired,
   onRemoveImage: func.isRequired,
   listingImageConfig: object.isRequired,
+  showSellerNameNotice: bool.isRequired,
 };
 
 export default compose(injectIntl)(EditListingPhotosFormComponent);

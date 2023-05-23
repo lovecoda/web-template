@@ -5,6 +5,7 @@ import classNames from 'classnames';
 // Import configs and util modules
 import { FormattedMessage } from '../../../../util/reactIntl';
 import { LISTING_STATE_DRAFT } from '../../../../util/types';
+import { propTypes } from '../../../../util/types';
 
 // Import shared components
 import { H3, ListingLink } from '../../../../components';
@@ -12,6 +13,7 @@ import { H3, ListingLink } from '../../../../components';
 // Import modules from this directory
 import EditListingPhotosForm from './EditListingPhotosForm';
 import css from './EditListingPhotosPanel.module.css';
+import { sellerDisplayName } from '../../../../util/data';
 
 const getInitialValues = params => {
   const { images } = params;
@@ -26,6 +28,7 @@ const EditListingPhotosPanel = props => {
     disabled,
     ready,
     listing,
+    currentUser,
     onImageUpload,
     submitButtonText,
     panelUpdated,
@@ -38,6 +41,8 @@ const EditListingPhotosPanel = props => {
   const rootClass = rootClassName || css.root;
   const classes = classNames(rootClass, className);
   const isPublished = listing?.id && listing?.attributes?.state !== LISTING_STATE_DRAFT;
+
+  const showSellerNameNotice = !isPublished && !sellerDisplayName(currentUser);
 
   return (
     <div className={classes}>
@@ -70,6 +75,7 @@ const EditListingPhotosPanel = props => {
         updated={panelUpdated}
         updateInProgress={updateInProgress}
         listingImageConfig={listingImageConfig}
+        showSellerNameNotice={showSellerNameNotice}
       />
     </div>
   );
@@ -81,6 +87,7 @@ EditListingPhotosPanel.defaultProps = {
   errors: null,
   images: [],
   listing: null,
+  currentUser: null,
 };
 
 EditListingPhotosPanel.propTypes = {
@@ -93,6 +100,7 @@ EditListingPhotosPanel.propTypes = {
 
   // We cannot use propTypes.listing since the listing might be a draft.
   listing: object,
+  currentUser: propTypes.currentUser,
 
   onImageUpload: func.isRequired,
   onSubmit: func.isRequired,

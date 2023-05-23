@@ -148,6 +148,13 @@
   }
 }
 
+.sellerNameNotice {
+  color: var(--colorAttention);
+
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
 .submitButton {
   flex-shrink: 0;
   margin-top: auto;

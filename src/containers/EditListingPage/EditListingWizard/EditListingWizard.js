@@ -22,7 +22,11 @@ import {
   LISTING_PAGE_PARAM_TYPES,
 } from '../../../util/urlHelpers';
 import { ensureCurrentUser, ensureListing } from '../../../util/data';
-import { BOOKING_PROCESS_NAME, PURCHASE_PROCESS_NAME, isBookingProcess } from '../../../transactions/transaction';
+import {
+  BOOKING_PROCESS_NAME,
+  PURCHASE_PROCESS_NAME,
+  isBookingProcess,
+} from '../../../transactions/transaction';
 
 // Import shared components
 import {
@@ -506,6 +510,7 @@ class EditListingWizard extends Component {
                 tab={tab}
                 params={params}
                 listing={listing}
+                currentUser={currentUser}
                 marketplaceTabs={tabs}
                 errors={errors}
                 handleCreateFlowTabScrolling={this.handleCreateFlowTabScrolling}

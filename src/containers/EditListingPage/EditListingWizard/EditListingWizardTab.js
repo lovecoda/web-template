@@ -78,6 +78,7 @@ const EditListingWizardTab = props => {
     marketplaceTabs,
     params,
     locationSearch,
+    currentUser,
     errors,
     fetchInProgress,
     newListingPublished,
@@ -165,6 +166,7 @@ const EditListingWizardTab = props => {
       params,
       locationSearch,
       updateInProgress,
+      currentUser,
       // newListingPublished and fetchInProgress are flags for the last wizard tab
       ready: newListingPublished,
       disabled: fetchInProgress,
@@ -259,6 +261,7 @@ const EditListingWizardTab = props => {
 EditListingWizardTab.defaultProps = {
   listing: null,
   updatedTab: null,
+  currentUser: null,
 };
 
 const { array, bool, func, object, oneOf, shape, string } = PropTypes;
@@ -285,6 +288,7 @@ EditListingWizardTab.propTypes = {
     replace: func.isRequired,
   }).isRequired,
   images: array.isRequired,
+  currentUser: object.isRequired,
 
   // We cannot use propTypes.listing since the listing might be a draft.
   listing: shape({
